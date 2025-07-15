@@ -21,3 +21,4 @@ deepl==1.21.1
 kiwipiepy==0.20.4
 konlpy==0.6.0
 langchain-upstage==0.6.0
+faiss-cpu==1.11.0
