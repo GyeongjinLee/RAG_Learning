@@ -1,0 +1,5 @@
+.env
+poetry.lock
+.python-version
+pyproject.toml
+sample.txt
