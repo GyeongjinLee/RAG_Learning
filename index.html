@@ -278,6 +278,245 @@
             display: block;
         }
 
+        .progress-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .progress-overlay.show {
+            display: flex;
+        }
+
+        .progress-modal {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .progress-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .progress-header h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .progress-filename {
+            color: #666;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #e9ecef;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 10px;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 12px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: none;
+            width: 50%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                #007bff 20%, 
+                #00d4ff 40%, 
+                #0099ff 60%, 
+                #007bff 80%, 
+                transparent 100%);
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        }
+
+        .progress-fill.loading {
+            animation: slideProgress 2.5s ease-in-out infinite;
+        }
+
+        @keyframes slideProgress {
+            0% {
+                left: -50%;
+                transform: translateX(0);
+                opacity: 0.8;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                left: 100%;
+                transform: translateX(0);
+                opacity: 0.8;
+            }
+        }
+
+        .progress-fill.completed {
+            width: 100%;
+            left: 0;
+            animation: none;
+            background: linear-gradient(90deg, #28a745, #20c997, #17a2b8);
+            box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+        }
+
+        /* 추가 시각적 효과 */
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                rgba(255, 255, 255, 0.1) 0%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                rgba(255, 255, 255, 0.1) 100%);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .progress-stage {
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .progress-stage .loading-dots {
+            display: inline-block;
+            animation: loadingDots 1.5s infinite;
+        }
+
+        @keyframes loadingDots {
+            0%, 20% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .progress-stage.completed {
+            color: #28a745;
+        }
+
+        .progress-details {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .progress-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .step-icon.completed {
+            background: #28a745;
+            color: white;
+        }
+
+        .step-icon.current {
+            background: #007bff;
+            color: white;
+        }
+
+        .step-icon.pending {
+            background: #e9ecef;
+            color: #666;
+        }
+
+        .step-text {
+            flex: 1;
+        }
+
+        .step-text.completed {
+            color: #28a745;
+        }
+
+        .step-text.current {
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .step-text.pending {
+            color: #666;
+        }
+
+        .cancel-button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .cancel-button:hover {
+            background: #c82333;
+        }
+
         .empty-state {
             text-align: center;
             padding: 50px 20px;
@@ -390,10 +629,54 @@
         <div>🔄 처리 중...</div>
     </div>
 
+    <div class="progress-overlay" id="progressOverlay">
+        <div class="progress-modal">
+            <div class="progress-header">
+                <h3>📄 파일 업로드 중</h3>
+                <div class="progress-filename" id="progressFilename"></div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span class="progress-stage" id="progressStage">업로드 준비 중<span class="loading-dots">...</span></span>
+                </div>
+            </div>
+            
+            <div class="progress-details">
+                <div class="progress-step">
+                    <div class="step-icon pending" id="step1Icon">1</div>
+                    <div class="step-text pending" id="step1Text">파일 업로드</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-icon pending" id="step2Icon">2</div>
+                    <div class="step-text pending" id="step2Text">텍스트 추출</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-icon pending" id="step3Icon">3</div>
+                    <div class="step-text pending" id="step3Text">구조화된 청크 생성</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-icon pending" id="step4Icon">4</div>
+                    <div class="step-text pending" id="step4Text">임베딩 생성</div>
+                </div>
+                <div class="progress-step">
+                    <div class="step-icon pending" id="step5Icon">5</div>
+                    <div class="step-text pending" id="step5Text">벡터 데이터베이스 저장</div>
+                </div>
+            </div>
+            
+            <button class="cancel-button" onclick="cancelUpload()">취소</button>
+        </div>
+    </div>
+
     <script>
         const API_BASE_URL = 'http://localhost:8080';
         let selectedDocumentId = null;
         let isProcessing = false;
+        let uploadAbortController = null;
 
         // DOM 요소들
         const uploadZone = document.getElementById('uploadZone');
@@ -403,6 +686,12 @@
         const questionInput = document.getElementById('questionInput');
         const sendButton = document.getElementById('sendButton');
         const loading = document.getElementById('loading');
+        
+        // 프로그래스 관련 요소들
+        const progressOverlay = document.getElementById('progressOverlay');
+        const progressFilename = document.getElementById('progressFilename');
+        const progressFill = document.getElementById('progressFill');
+        const progressStage = document.getElementById('progressStage');
 
         // 초기화
         document.addEventListener('DOMContentLoaded', function() {
@@ -458,21 +747,53 @@
                 return;
             }
 
+            // 프로그래스 모달 초기화 및 표시
+            showProgressModal(file.name);
+            
             const formData = new FormData();
             formData.append('file', file);
 
-            setLoading(true);
+            // AbortController 생성
+            uploadAbortController = new AbortController();
+
             try {
+                // 1단계: 파일 업로드 시작
+                updateProgress(1, '파일 업로드 중');
+                
                 const response = await fetch(`${API_BASE_URL}/upload-pdf`, {
                     method: 'POST',
-                    body: formData
+                    body: formData,
+                    signal: uploadAbortController.signal
                 });
 
                 if (!response.ok) {
                     throw new Error(`서버 오류: ${response.status}`);
                 }
 
+                // 2단계: 텍스트 추출
+                updateProgress(2, '텍스트 추출 중');
+                await sleep(800);
+
+                // 3단계: 청크 생성
+                updateProgress(3, '구조화된 청크 생성 중');
+                await sleep(1000);
+
+                // 4단계: 임베딩 생성
+                updateProgress(4, '임베딩 생성 중');
+                await sleep(1500);
+
+                // 5단계: 벡터 DB 저장
+                updateProgress(5, '벡터 데이터베이스 저장 중');
+                await sleep(500);
+
                 const result = await response.json();
+                
+                // 완료
+                updateProgress(5, '업로드 완료!', true);
+                await sleep(500);
+
+                hideProgressModal();
+                
                 alert(`문서 업로드 완료!\n메인 청크: ${result.main_chunks_count}개\n서브 청크: ${result.subchunks_count}개`);
                 
                 // 문서 목록 새로고침
@@ -482,11 +803,94 @@
                 fileInput.value = '';
                 
             } catch (error) {
+                hideProgressModal();
                 console.error('업로드 오류:', error);
-                alert('파일 업로드에 실패했습니다: ' + error.message);
+                if (error.name === 'AbortError') {
+                    alert('파일 업로드가 취소되었습니다.');
+                } else {
+                    alert('파일 업로드에 실패했습니다: ' + error.message);
+                }
             } finally {
-                setLoading(false);
+                uploadAbortController = null;
             }
+        }
+
+        function showProgressModal(filename) {
+            progressFilename.textContent = filename;
+            progressOverlay.classList.add('show');
+            resetProgress();
+        }
+
+        function hideProgressModal() {
+            progressOverlay.classList.remove('show');
+            resetProgress();
+        }
+
+        function resetProgress() {
+            progressFill.className = 'progress-fill';
+            progressStage.innerHTML = '업로드 준비 중<span class="loading-dots">...</span>';
+            progressStage.className = 'progress-stage';
+            
+            // 모든 단계 초기화
+            for (let i = 1; i <= 5; i++) {
+                const icon = document.getElementById(`step${i}Icon`);
+                const text = document.getElementById(`step${i}Text`);
+                icon.className = 'step-icon pending';
+                text.className = 'step-text pending';
+                icon.textContent = i;
+            }
+        }
+
+        function updateProgress(step, message, isCompleted = false) {
+            if (isCompleted) {
+                progressFill.className = 'progress-fill completed';
+                progressStage.innerHTML = message;
+                progressStage.className = 'progress-stage completed';
+            } else {
+                progressFill.className = 'progress-fill loading';
+                progressStage.innerHTML = message + '<span class="loading-dots">...</span>';
+                progressStage.className = 'progress-stage';
+            }
+            
+            // 현재 단계까지 완료로 표시
+            for (let i = 1; i <= 5; i++) {
+                const icon = document.getElementById(`step${i}Icon`);
+                const text = document.getElementById(`step${i}Text`);
+                
+                if (i < step) {
+                    // 완료된 단계
+                    icon.className = 'step-icon completed';
+                    text.className = 'step-text completed';
+                    icon.textContent = '✓';
+                } else if (i === step) {
+                    // 현재 단계
+                    if (isCompleted) {
+                        icon.className = 'step-icon completed';
+                        text.className = 'step-text completed';
+                        icon.textContent = '✓';
+                    } else {
+                        icon.className = 'step-icon current';
+                        text.className = 'step-text current';
+                        icon.textContent = '⟳';
+                    }
+                } else {
+                    // 대기 중인 단계
+                    icon.className = 'step-icon pending';
+                    text.className = 'step-text pending';
+                    icon.textContent = i;
+                }
+            }
+        }
+
+        function cancelUpload() {
+            if (uploadAbortController) {
+                uploadAbortController.abort();
+            }
+            hideProgressModal();
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
         }
 
         async function loadDocuments() {

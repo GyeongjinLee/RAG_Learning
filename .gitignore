@@ -3,3 +3,5 @@ poetry.lock
 .python-version
 pyproject.toml
 sample.txt
+__pycache__/
+chroma_db/
