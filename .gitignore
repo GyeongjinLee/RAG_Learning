@@ -5,3 +5,5 @@ pyproject.toml
 sample.txt
 __pycache__/
 chroma_db/
+.mcp.json
+mcp.json_bak
