@@ -51,10 +51,10 @@ Visual Studio Code 실행 후 왼쪽 install extensions 클릭
 
 ### python 검색 후 설치
 * python 언어 개발 환경 지원하는 확장 팩
-![[Pasted image 20250728001257.png]]
+![[images/20250728001257.png]](images/20250728001257.png)
 ### jupyter 검색 후 설치
 * **Jupyter는 코드, 수식, 시각화, 설명 문서를 한 화면에서 작성하고 실행할 수 있는 대화형 개발 환경**입니다.  특히 **데이터 분석, 머신러닝, 교육용 문서 작성** 등에 매우 널리 사용됩니다.
-![[image/20250728001402.png]](image/20250728001402.png)
+![[image/20250728001402.png]](images/20250728001402.png)
 Visual Studio Code 껐다가 재실행
 
 ---  
