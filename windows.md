@@ -13,7 +13,7 @@ Intel/AMD CPU 는 모두 X86 아키텍처를 사용하고 있습니다.
 #### Standalone Installer
 **[Git for Windows/x64 Setup](https://github.com/git-for-windows/git/releases/download/v2.50.1.windows.1/Git-2.50.1-64-bit.exe).**
 설치
-![[images/Pasted image 20250726170945.png]]
+![[images/20250726170945.png]]
 
 - **설치시 옵션 체크 후 진행(윈도우 power shell(터미털)에 설치된 git 명령어 사용 할 수 있게 등록하는 옵션)**
 	- **(NEW!)Add a Git Bash Profile to Windows Terminal**
