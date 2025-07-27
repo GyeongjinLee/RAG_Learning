@@ -13,16 +13,15 @@ Intel/AMD CPU 는 모두 X86 아키텍처를 사용하고 있습니다.
 #### Standalone Installer
 **[Git for Windows/x64 Setup](https://github.com/git-for-windows/git/releases/download/v2.50.1.windows.1/Git-2.50.1-64-bit.exe).**
 설치
-![[Pasted image 20250726170945.png]]
+![[images/Pasted image 20250726170945.png]]
 
-- **설치시 옵션 체크 후 진행(윈도우 power shell(터미털)에 설치된 git 명령어 사용 할 수 있게 등록하는 옵션)
-	- (NEW!)Add a Git Bash Profile to Windows Terminal**
+- **설치시 옵션 체크 후 진행(윈도우 power shell(터미털)에 설치된 git 명령어 사용 할 수 있게 등록하는 옵션)**
+	- **(NEW!)Add a Git Bash Profile to Windows Terminal**
+![[images/Pasted image 20250727235138.png]]
 
-![../Attachments/capture-20240616-000005.png](https://teddynote.com/img/user/Attachments/capture-20240616-000005.png)
 
 나머지는 전부 Next 버튼을 눌러 설치를 진행합니다.
 
-![../Attachments/capture-20240616-000119.png](https://teddynote.com/img/user/Attachments/capture-20240616-000119.png)
 
 **Window 키 - PowerShell 을 반드시 **관리자 권한으로 실행**
 
@@ -34,9 +33,7 @@ git
 
 결과 (대충 비슷하게 뜨면 됩니다)
 * 명령어가 없다는 에러 메시지가 나오는 경우  현재 설치된 git명령를 인식 못했기 때문입니다. 이럴때는 power shell 종료 후 재 실행하면 최신 환경정보가 업데이트 되고 문제를 해결 할 수 있습니다.
-
-![../Attachments/capture-20240616-000222.png](https://teddynote.com/img/user/Attachments/capture-20240616-000222.png)
-
+![[images/Pasted image 20250727235436.png]]
 ## Visual Studio Code 설치
 
 **VS Code는 마이크로소프트에서 개발한 무료 코드 편집기(코드 에디터)**입니다.  
@@ -48,21 +45,13 @@ Visual Studio Code 다운로드
 다운로드 받은 Visual Studio Code 를 설치합니다 (Applications 폴더에 복사)
 
 Visual Studio Code 실행 후 왼쪽 install extensions 클릭
-
-![../Attachments/capture-20240615-231637.png](https://teddynote.com/img/user/Attachments/capture-20240615-231637.png)
-
+![[Pasted image 20250728001122.png]]
 ### python 검색 후 설치
 * python 언어 개발 환경 지원하는 확장 팩
-
-![../Attachments/capture-20240615-231530.png](https://teddynote.com/img/user/Attachments/capture-20240615-231530.png)
-
+![[Pasted image 20250728001257.png]]
 ### jupyter 검색 후 설치
 * **Jupyter는 코드, 수식, 시각화, 설명 문서를 한 화면에서 작성하고 실행할 수 있는 대화형 개발 환경**입니다.  특히 **데이터 분석, 머신러닝, 교육용 문서 작성** 등에 매우 널리 사용됩니다.
-
-![../Attachments/capture-20240615-231400.png](https://teddynote.com/img/user/Attachments/capture-20240615-231400.png)
-
-markdown preview 검색 후 설치
-![[Pasted image 20250726182653.png]]
+![[Pasted image 20250728001402.png]]
 Visual Studio Code 껐다가 재실행
 
 ---  
@@ -70,7 +59,7 @@ Visual Studio Code 껐다가 재실행
 ## PowerShell Policy 적용
 
 먼저, **Windows PowerShell** 을 **"관리자 권한으로 실행"** 합니다.
-![[Pasted image 20250726171358.png]]
+![[images/Pasted image 20250726171358.png]]
 
 다음의 명령어를 입력하여 Policy 를 적용합니다.
 
@@ -138,17 +127,14 @@ git clone https://github.com/pyenv-win/pyenv-win.git "$env:USERPROFILE\.pyenv"
 pyenv
 ```
 
-![../Attachments/capture-20240616-000711.png](https://teddynote.com/img/user/Attachments/capture-20240616-000711.png)
-
-
 # 실습코드 다운로드
 
 - RAG 실습코드 링크: https://github.com/GyeongjinLee/RAG_Learning.git
 * 사용자 모드로  power shell 실행
 
-![[Pasted image 20250726174732.png]]
+![[images/Pasted image 20250726174732.png]]
 
-![[Pasted image 20250726214449.png]]
+![[images/Pasted image 20250726214449.png]]
 
 1. 사용자의 Documents 디렉토리로 변경  
 ```bash
@@ -200,6 +186,7 @@ pyenv local 3.11.9
 python --version  # → Python 3.11.9 (myproject 내에서만)
 
 ```
+
 ## Poetry 설치
 
 - `**Python 3 환경에서 Poetry 도구를 1.8.5 버전으로 설치**하여, **의존성 및 프로젝트 관리를 자동화**할 수 있게 만드는 명령어입니다.
@@ -226,7 +213,7 @@ poetry add $(cat requirements.txt)
 
 *설치가 다 되었으며, 우측 상단 "select kernel"
 
-![[Pasted image 20250727183819.png]]
+![[images/Pasted image 20250727183819.png]]
 python environment 클릭 - 3.11.9 가상 환경 선택
 - 설치한 가상환경이 안뜬다면 Visual Studio Code 껐다가 재실행
-![[Pasted image 20250727190655.png]]
+![[images/Pasted image 20250727190655.png]]
