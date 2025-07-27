@@ -12,12 +12,14 @@
 Intel/AMD CPU 는 모두 X86 아키텍처를 사용하고 있습니다. 
 #### Standalone Installer
 **[Git for Windows/x64 Setup](https://github.com/git-for-windows/git/releases/download/v2.50.1.windows.1/Git-2.50.1-64-bit.exe).**
+
 설치
 ![[images/20250726170945.png]](images/20250726170945.png)
 
 
 - **설치시 옵션 체크 후 진행(윈도우 power shell(터미털)에 설치된 git 명령어 사용 할 수 있게 등록하는 옵션)**
 	- **(NEW!)Add a Git Bash Profile to Windows Terminal**
+
 ![[images/Pasted image 20250727235138.png]](images/20250727235138.png)
 
 
@@ -35,7 +37,8 @@ git
 
 결과 (대충 비슷하게 뜨면 됩니다)
 * 명령어가 없다는 에러 메시지가 나오는 경우  현재 설치된 git명령를 인식 못했기 때문입니다. 이럴때는 power shell 종료 후 재 실행하면 최신 환경정보가 업데이트 되고 문제를 해결 할 수 있습니다.
-![[images/Pasted image 20250727235436.png]]
+
+![[images/20250727235436.png]](images/20250727235436.png)
 ## Visual Studio Code 설치
 
 **VS Code는 마이크로소프트에서 개발한 무료 코드 편집기(코드 에디터)**입니다.  
