@@ -217,7 +217,9 @@ poetry add $(cat requirements.txt)
 ```
 
 
-*설치가 다 되었으며, 우측 상단 "select kernel"
+**설치가 다 되었으면, VS Code를 실행 상단 메뉴 File -> Open Folder 실습코드가 있는 디렉토리를 오픈**
+
+- 우측 상단 "select kernel"
 
 ![[images/20250727183819.png]](images/20250727183819.png)
 python environment 클릭 - 3.11.9 가상 환경 선택
