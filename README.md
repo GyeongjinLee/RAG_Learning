@@ -6,8 +6,8 @@
 이 프로젝트는 **PDF 문서를 업로드하고 AI 기반 질문-답변을 수행하는 RAG(Retrieval-Augmented Generation) 시스템**입니다. FastAPI 기반 백엔드와 웹 인터페이스를 통해 사용자가 PDF 문서를 업로드하고, 문서 내용에 대해 자연어로 질문할 수 있습니다.
 
 ## 개발 환경 설정
-[Windows 개발 환경 설정](windows.md)
-[Mac 개발 환경 설정](macos.md)
+- [Windows 개발 환경 설정](windows.md)
+- [Mac 개발 환경 설정](macos.md)
 
 
 
