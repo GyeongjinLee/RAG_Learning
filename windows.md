@@ -208,11 +208,10 @@ poetry 를 이용하여 파이썬 가상환경 및 패키지 관리를 위한 �
 ```bash
 poetry init --name "RAG_Learning" --description "RAG 학습" --python "^3.11.9" --no-interaction
 ```
-```bash
 참고
 poetry 설치 위치는 보통 아래와 같습니다.
 C:\Users\<사용자명>\AppData\Roaming\Python\Scripts
-
+```bash
 $oldPath = [System.Environment]::GetEnvironmentVariable("Path", "User")
 $newPath = "$oldPath;$env:USERPROFILE\AppData\Roaming\Python\Scripts"
 [System.Environment]::SetEnvironmentVariable("Path", $newPath, "User")
