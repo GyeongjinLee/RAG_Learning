@@ -202,6 +202,13 @@ python --version  # → Python 3.11.9 (myproject 내에서만)
 curl.exe -sSL https://install.python-poetry.org | python -
 ```
 
+```bash
+$oldPath = [Environment]::GetEnvironmentVariable("Path", "User")
+$newPath = "$oldPath;C:\Users\LeeGyeongjin\AppData\Roaming\Python\Scripts"
+[Environment]::SetEnvironmentVariable("Path", $newPath, "User")
+```
+
+
 poetry 를 이용하여 파이썬 가상환경 및 패키지 관리를 위한 초기화
 * 실습코드가 있는 디렉토리에서 실행
 * 실행 완료 후  pyproject.toml 파일 생성됨
