@@ -208,7 +208,12 @@ poetry 를 이용하여 파이썬 가상환경 및 패키지 관리를 위한 �
 ```bash
 poetry init --name "RAG_Learning" --description "RAG 학습" --python "^3.11.9" --no-interaction
 ```
-  
+```bash
+$oldPath = [Environment]::GetEnvironmentVariable("Path", "User")
+$newPath = "$oldPath;C:\Users\LeeGyeongjin\AppData\Roaming\Python\Scripts"
+[Environment]::SetEnvironmentVariable("Path", $newPath, "User")
+```
+
 파이썬 패키지 일괄 업데이트
 
 ```bash
