@@ -213,9 +213,9 @@ poetry init --name "RAG_Learning" --description "RAG 학습" --python "^3.11.9" 
 poetry 설치 위치는 보통 아래와 같습니다.
 C:\Users\<사용자명>\AppData\Roaming\Python\Scripts
 
-$oldPath = [Environment]::GetEnvironmentVariable("Path", "User")
-$newPath = "$oldPath;C:\Users\LeeGyeongjin\AppData\Roaming\Python\Scripts"
-[Environment]::SetEnvironmentVariable("Path", $newPath, "User")
+$oldPath = [System.Environment]::GetEnvironmentVariable("Path", "User")
+$newPath = "$oldPath;$env:USERPROFILE\AppData\Roaming\Python\Scripts"
+[System.Environment]::SetEnvironmentVariable("Path", $newPath, "User")
 ```
 
 파이썬 패키지 일괄 업데이트
